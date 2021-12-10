@@ -18,6 +18,7 @@ const storage = multer.diskStorage({
 // import routes
 const pets = require('./routes/routePets');
 const typePets = require('./routes/routeTypesPets');
+const petsFavorites = require('./routes/routeFavoriteUserPets')
 
 // settings
 app.set('port', process.env.PORT || 5000);
@@ -34,5 +35,6 @@ app.use(multer({
 // routes
 app.use('/api/pets', pets);
 app.use('/api/types', typePets);
+app.use('/api/favorites', petsFavorites);
 
 module.exports = app;

@@ -2,9 +2,13 @@ const { Router } = require("express")
 const route = Router();
 
 // import controllers
-const {getPets} =require('../controllers/controllers.Pets');
+const {
+    getPets,
+    getPetForId
+} =require('../controllers/controllers.Pets');
 
 route.get('/', getPets);
+route.get('/:petID', getPetForId)
 
 
 module.exports = route;

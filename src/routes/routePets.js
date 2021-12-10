@@ -4,11 +4,21 @@ const route = Router();
 // import controllers
 const {
     getPets,
-    getPetForId
+    getPetForId,
+    updatePetForId,
+    deletePetForId,
+    createPet
 } =require('../controllers/controllers.Pets');
 
+
 route.get('/', getPets);
-route.get('/:petID', getPetForId)
+route.get('/:petID', getPetForId);
+
+route.post('/create', createPet);
+
+route.put('/:petID',updatePetForId);
+
+route.delete('/:petID', deletePetForId)
 
 
 module.exports = route;
